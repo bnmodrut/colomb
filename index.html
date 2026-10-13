@@ -9,7 +9,7 @@
 <meta name="google" content="notranslate">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAXI82</title>
+<title>MAXI92</title>
 <meta name="description" content="Agar.Live ile yeni versiyon Agario Oyun Sunucuları İle Zevkli Agar.io oyunları">
 <meta name="content-language" content="tr_TR">
 <meta name="language" content="tr_TR">
@@ -175,7 +175,6 @@ getScript('//api.adinplay.com/libs/aiptag/pub/AGV/agar.live/tag.min.js', initAip
 </div>
 </div>
 <div class="main-login-area-center">
-<a href="/"><img width="418" height="160" src="./img/logo.webp?=v2" alt="agario" class="main-login-area-center-logo"></a>
 <a href="/"><img width="418" height="160" src="https://agarlive.site/imgs/logo.webp?=1" alt="agario" class="main-login-area-center-logo"></a>
 <div class="main-login-area-center-play-area">
 <div class="mlacpa-name-box"><input placeholder="nick" type="text" autofocus="" id="nick" maxlength="20" value="agar.live"><button onclick="window.open('https://fancy.agar.live', '_blank')">Fancy Nick</button></div>
@@ -189,7 +188,7 @@ getScript('//api.adinplay.com/libs/aiptag/pub/AGV/agar.live/tag.min.js', initAip
 </select>
 <input type="hidden" id="txtSkin" class="form-control" autocomplete="off" maxlength="15">
 <button type="button" class="mlacpa-play-button" onclick="playGame(); return false;">OYNA</button>
-<button type="button" class="mlacpa-spectate-button" onclick="spectate(); return false;">İzle</button>
+<button type="button" class="mlacpa-spectate-button" style="display:block;width:100%;" onclick="spectate(); return false;">İzle</button>
 <div class="form-group" style="witdh:336px;height:300px">
 <hr>
 <center>
@@ -304,7 +303,6 @@ getScript('//api.adinplay.com/libs/aiptag/pub/AGV/agar.live/tag.min.js', initAip
                                 return;
                             }
                             let HTML =""
-                            scoreboard[el].forEach((e,i)=>{
                             scores.forEach((e,i)=>{
                                 HTML+=`
                                 <div class="sb-elm">
@@ -314,18 +312,9 @@ getScript('//api.adinplay.com/libs/aiptag/pub/AGV/agar.live/tag.min.js', initAip
                             </div>
                                 `
                             });
-                            document.querySelector("#scoreboard").innerHTML=HTML;
                             target.innerHTML=HTML;
                         }
-                        
-                       async function fet() {
-                        const resp = await fetch('./scoreboard.php')
-                        .then(res=>res.text())
-                        scoreboard=JSON.parse(resp);
-                        
                         writeScores("today");
-                    }
-                     fet();
                 </script>
 
 </div>
